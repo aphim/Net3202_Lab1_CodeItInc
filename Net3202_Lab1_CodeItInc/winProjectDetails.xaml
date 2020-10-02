@@ -1,0 +1,61 @@
+﻿<!-- Project Name: Net3202_Lab1_CodeItInc -->
+<!-- Author: Jacky Yuan -->
+<!-- Date: Oct 2, 2020 -->
+<!-- Description: Makes a program that generates projects. -->
+<!-- Change log: N/A -->
+
+<!--initially generated code for the window -->
+<Window x:Class="Net3202_Lab1_CodeItInc.winProjectDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Net3202_Lab1_CodeItInc"
+        mc:Ignorable="d"
+        Title="winProjectDetails" Height="500" Width="800">
+    <!--creates a grid with one column -->
+    <Grid x:Name="winProjectDetail">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <!--creates a stackpanel in the grid column -->
+        <StackPanel Margin="50">
+            <!-- label: "Project Name" -->
+            <Label x:Name="lblProjectNameOut" Content="Project Name:" Target="{Binding ElementName=txtProjectNameOut}"/>
+            <!--textbox displaying the current project name -->
+            <TextBox x:Name="txtProjectNameOut" IsEnabled="False"/>
+            <!--label: "Budget" -->
+            <Label x:Name="lblBudgetOut" Content="Budget:" Target="{Binding ElementName=txtBudgetOut}"/>
+            <!--textbox displaying the current budget -->
+            <TextBox x:Name="txtBudgetOut" IsEnabled="False"/>
+            <!--label "spent" -->
+            <Label x:Name="lblSpentOut" Content="Spent:" Target="{Binding ElementName=txtSpentOut}"/>
+            <!--textbox displaying the current amount spent -->
+            <TextBox x:Name="txtSpentOut" IsEnabled="False"/>
+            <!--label: "Est hours remaining" -->
+            <Label x:Name="lblEstHoursRemainingOut" Content="Est Hours Remaining:" Target="{Binding ElementName=txtEstHoursRemainingOut}"/>
+            <!--textbox displaying the current estimated remaining time -->
+            <TextBox x:Name="txtEstHoursRemainingOut" IsEnabled="False"/>
+            <!--label: "Status" -->
+            <Label x:Name="lblStatusOut" Content="Status:"/>
+            <!--combobox with the currently select status displayed -->
+            <ComboBox x:Name="cmbStatusOut" IsEnabled="False">
+                <!--Combobox items requirements, design, implementation,testing, deployment, completed" -->
+                <ComboBoxItem x:Name="cmbItemrequirementsOut" Content="Requirements" IsSelected="True"/>
+                <ComboBoxItem x:Name="cmbItemDesignOut" Content="Design"/>
+                <ComboBoxItem x:Name="cmbItemImplementationOut" Content="Implementation"/>
+                <ComboBoxItem x:Name="cmbItemTestingOut" Content="Testing"/>
+                <ComboBoxItem x:Name="cmbItemDeploymentOut" Content="Deployment"/>
+                <ComboBoxItem x:Name="cmbItemCompletedOut" Content="Completed"/>
+            </ComboBox>
+            <!--generates a stackpanel for the buttons-->
+            <StackPanel Margin="30">
+                <!-- generates a button "alter project"-->
+                <Button x:Name="btnAlterProject" Content="Alter Project" Margin="10" IsEnabled="False"/>
+                <!-- generates a button "close window-->
+                <Button x:Name="btnCloseWindow" Content="Close Window" Margin="10"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
+
