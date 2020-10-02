@@ -24,13 +24,16 @@ namespace Net3202_Lab1_CodeItInc
         {
             InitializeComponent();
         }
+
+        static List<Project> list = new List<Project>();
+
         private void btnCreateProject_Click(object sender, RoutedEventArgs e)
         {
             string inputtedProjectName;
             double inputtedProjectSpent;
             double inputtedProjectBudget;
             double inputtedHoursRemaining;
-            int inputtedProjectStatus;
+            string inputtedProjectStatus;
 
             if (txtProjectName.Text.Trim() != string.Empty)
             {
@@ -45,47 +48,71 @@ namespace Net3202_Lab1_CodeItInc
                             {
                                 if (Double.TryParse(txtEstHoursRemaining.Text.Trim(), out inputtedHoursRemaining))
                                 {
-                                    if (inputtedHoursRemaining >= 0)
+                                    if (inputtedHoursRemaining > 0)
                                     {
-                                        inputtedProjectStatus = cmbRequirements.SelectedIndex;
+                                    inputtedProjectStatus = cmbRequirements.Text;
+                                        if (inputtedHoursRemaining == 0)
+                                        {
+                                            cmbRequirements.SelectedIndex = 5;
+                                            inputtedProjectStatus = cmbRequirements.Text;
+                                        }
+                                    list.Add(new Project(inputtedProjectName, inputtedProjectBudget, inputtedProjectSpent,
+                                    inputtedHoursRemaining, inputtedProjectStatus));
+
+                                    lsbOutputDisplay.Items.Clear();
+
+                                    for (int i=0; i<list.Count; i++)
+                                    {
+                                       lsbOutputDisplay.Items.Add(list[i].ProjectName);
                                     }
-                                    else if (inputtedHoursRemaining == 0)
-                                    {
-                                        cmbRequirements.SelectedIndex = 5;
-                                        inputtedProjectStatus = cmbRequirements.SelectedIndex;
+
                                     }
                                     else
                                     {
+                                        txtEstHoursRemaining.Focus();
+                                        txtEstHoursRemaining.SelectAll();
                                         MessageBox.Show("Error: Cannot have negative hours remaining."); 
                                     }
                                 }
                                 else
                                 {
+                                    txtEstHoursRemaining.Focus();
+                                    txtEstHoursRemaining.SelectAll();
                                     MessageBox.Show("Error: Estimated time must be a numeric input.");
                                 }
                             }
                             else
                             {
+                                txtSpent.Focus();
+                                txtSpent.SelectAll();
                                 MessageBox.Show("Error: Cannot amount spent cannot be negative value.");
                             }
                         }
                         else
                         {
+                            txtSpent.Focus();
+                            txtSpent.SelectAll();
                             MessageBox.Show("Error: Amount Spent must be a numeric input.");
                         }
                     }
                     else
                     {
+                        txtBudget.Focus();
+                        txtBudget.SelectAll();
                         MessageBox.Show("Error: Cannot budget cannot be negative value.");
                     }
                 }
                 else
                 {
+                    txtBudget.Focus();
+                    txtBudget.SelectAll();
                     MessageBox.Show("Error: Budget must be a numeric input.");
                 }
             }
             else
             {
+                txtProjectName.Focus();
+                txtProjectName.SelectAll();
                 MessageBox.Show("Error: Project name cannot be empty.");
             }
         }

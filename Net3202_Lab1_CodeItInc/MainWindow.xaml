@@ -21,7 +21,7 @@
             <Label x:Name="lblEstHoursRemaining" Content="Est Hours Remaining:" Target="{Binding ElementName=txtEstHoursRemaining}"/>
             <TextBox x:Name="txtEstHoursRemaining"/>
             <Label x:Name="lblStatus" Content="Status:"/>
-            <ComboBox x:Name="cmbRequirements" IsDropDownOpen="True">
+            <ComboBox x:Name="cmbRequirements">
                 <ComboBoxItem x:Name="cmbItemrequirements" Content="Requirements" IsSelected="True"/>
                 <ComboBoxItem x:Name="cmbItemDesign" Content="Design"/>
                 <ComboBoxItem x:Name="cmbItemImplementation" Content="Implementation"/>

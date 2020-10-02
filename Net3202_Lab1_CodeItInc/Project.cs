@@ -6,37 +6,41 @@ using System.Text;
 //keep the default namespace too, BillingApp is just the name of my project.
 namespace Net3202_Lab1_CodeItInc
 {
-    public class Program
+    public class Project
     {
         //First private data member
         private string projectName;
-        private double projectBudget;
-        private double projectSpent;
+        private double budget;
+        private double amountSpent;
         private double hoursRemaining;
         private string projectStatus;
 
         //Complete the rest (there are four more mentioned in the description).
         //constructor, you need to complete it this is a no parameter constructor
        // shown below.
-    public Program(string projectName, double projectBudget, double projectSpent, double hoursRemaining, string projectStatus)
+    public Project(string projectName, double budget, double amountSpent, double hoursRemaining, string projectStatus)
         {
-
+            this.projectName = projectName;
+            this.budget = budget;
+            this.amountSpent = amountSpent;
+            this.hoursRemaining = hoursRemaining;
+            this.projectStatus = projectStatus;
         }
             
-        public string ProjectName
+    public string ProjectName
         {
             get { return this.projectName; }
             set { this.projectName = value; }
         }
     public double ProjectBudget
         { 
-            get { return this.projectBudget; }
-            set { this.projectBudget = value; }
+            get { return this.budget; }
+            set { this.budget = value; }
         }
     public double ProjectSpent
         {
-            get { return this.projectSpent; }
-            set { this.projectSpent = value; }
+            get { return this.amountSpent; }
+            set { this.amountSpent = value; }
         }
     public double HoursRemaining
         {
