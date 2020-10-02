@@ -18,10 +18,10 @@ namespace Net3202_Lab1_CodeItInc
         private double budget;
         private double amountSpent;
         private double hoursRemaining;
-        private string projectStatus;
+        private int projectStatus;
 
      //public constructor for creating a project class object
-    public Project(string projectName, double budget, double amountSpent, double hoursRemaining, string projectStatus)
+    public Project(string projectName, double budget, double amountSpent, double hoursRemaining, int projectStatus)
         {
             this.projectName = projectName;
             this.budget = budget;
@@ -64,7 +64,7 @@ namespace Net3202_Lab1_CodeItInc
     /// <summary>
     /// getter and setter for project status
     /// </summary>
-    public string ProjectStatus
+    public int ProjectStatus
         {
             get { return this.projectStatus; }
             set { this.projectStatus = value; }

@@ -55,15 +55,8 @@
         </StackPanel>
         <!--generated a second stackpanel in grid 2 -->
         <StackPanel Grid.Column="1" Margin="50">
-            <!--creates an empty listbox object -->
-            <ListBox x:Name="lsbOutputDisplay" Margin="50">
-                <!-- adds an event in the listbox for double click of a listbox item-->
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
-                        <EventSetter Event="MouseDoubleClick" Handler="lsbOutputDisplay_MouseDoubleClick"/>
-                </Style>
-            </ListBox.ItemContainerStyle>
-            </ListBox>
+            <!--creates an empty listbox object and enables mouse double click on the listbox object-->
+            <ListBox x:Name="lsbOutputDisplay" Margin="50" MouseDoubleClick="lsbOutputDisplay_MouseDoubleClick"/>
 
         </StackPanel>
 

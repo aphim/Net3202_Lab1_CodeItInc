@@ -46,7 +46,7 @@ namespace Net3202_Lab1_CodeItInc
             double inputtedProjectSpent;
             double inputtedProjectBudget;
             double inputtedHoursRemaining;
-            string inputtedProjectStatus;
+            int inputtedProjectStatus;
 
             //checks if the project name field is empty
             if (txtProjectName.Text.Trim() != string.Empty)
@@ -71,13 +71,13 @@ namespace Net3202_Lab1_CodeItInc
                                     //checks if estimated time remaining is in bounds
                                     if (inputtedHoursRemaining >= 0)
                                     {
-                                        inputtedProjectStatus = cmbStatus.Text;
+                                        inputtedProjectStatus = cmbStatus.SelectedIndex;
                                         //checks if estimated time remaining is equal to zero
                                         if (inputtedHoursRemaining == 0)
                                         {
                                             //changes status to completed
                                             cmbStatus.SelectedIndex = 5;
-                                            inputtedProjectStatus = cmbStatus.Text;
+                                            inputtedProjectStatus = cmbStatus.SelectedIndex;
                                         }
                                         //checks if the status selected is equal to completed
                                         if (cmbStatus.SelectedIndex == 5)
@@ -163,8 +163,8 @@ namespace Net3202_Lab1_CodeItInc
         /// <param name="e"></param>
         private void lsbOutputDisplay_MouseDoubleClick(object sender, RoutedEventArgs e)
         {
-            //creates a new window
-            winProjectDetails newWindow = new winProjectDetails();
+            //creates a new window and passes the selected project to the other window.
+            winProjectDetails newWindow = new winProjectDetails(list[lsbOutputDisplay.SelectedIndex]);
             newWindow.Show();
         }
     }
