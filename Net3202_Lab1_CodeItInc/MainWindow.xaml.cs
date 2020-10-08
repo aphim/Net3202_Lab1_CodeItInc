@@ -2,10 +2,12 @@
 //Author: Jacky Yuan
 //Date: Oct 2, 2020
 //Description: Makes a program that generates projects.
-//Change log: N / A
+//Change log: Oct 7,2020: Linked listbox with the list of projects.
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,13 +28,14 @@ namespace Net3202_Lab1_CodeItInc
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<Project> list = new ObservableCollection<Project>();
+
         public MainWindow()
         {
             InitializeComponent();
+            //links the listbox to the list
+            lsbOutputDisplay.ItemsSource = list;
         }
-
-        //Generate a list for storing the projects generated
-        static List<Project> list = new List<Project>();
 
         /// <summary>
         /// Event for when the create project button is clicked.
@@ -86,18 +89,11 @@ namespace Net3202_Lab1_CodeItInc
                                             txtEstHoursRemaining.Text = "0";
                                             inputtedHoursRemaining = 0;
                                         }
+
                                         //adds the new project object into the list
                                         list.Add(new Project(inputtedProjectName, inputtedProjectBudget, inputtedProjectSpent,
                                         inputtedHoursRemaining, inputtedProjectStatus));
-                                        
-                                        //clears the list diaplay
-                                        lsbOutputDisplay.Items.Clear();
-                                        
-                                        //loops through the list and outputs the objects created
-                                        for (int i = 0; i < list.Count; i++)
-                                        {
-                                            lsbOutputDisplay.Items.Add(list[i].ProjectName);
-                                        }
+
 
                                     }
                                     //error for hour input out of bounds
@@ -164,8 +160,9 @@ namespace Net3202_Lab1_CodeItInc
         private void lsbOutputDisplay_MouseDoubleClick(object sender, RoutedEventArgs e)
         {
             //creates a new window and passes the selected project to the other window.
-            winProjectDetails newWindow = new winProjectDetails(list[lsbOutputDisplay.SelectedIndex]);
+            winProjectDetails newWindow = new winProjectDetails(list, lsbOutputDisplay.SelectedIndex);
             newWindow.Show();
         }
+       
     }
 }

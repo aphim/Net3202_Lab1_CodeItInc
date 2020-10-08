@@ -2,7 +2,7 @@
 <!-- Author: Jacky Yuan -->
 <!-- Date: Oct 2, 2020 -->
 <!-- Description: Makes a program that generates projects. -->
-<!-- Change log: N/A -->    
+<!-- Change log: Oct 7, 2020: Binded the listbox to the list of projects -->    
     
     <!-- Initially generated code for the window-->
 <Window x:Name="winCodeItInc1" x:Class="Net3202_Lab1_CodeItInc.MainWindow"
@@ -56,9 +56,8 @@
         <!--generated a second stackpanel in grid 2 -->
         <StackPanel Grid.Column="1" Margin="50">
             <!--creates an empty listbox object and enables mouse double click on the listbox object-->
-            <ListBox x:Name="lsbOutputDisplay" Margin="50" MouseDoubleClick="lsbOutputDisplay_MouseDoubleClick"/>
-
+            <ListBox x:Name="lsbOutputDisplay" Margin="50" DisplayMemberPath = "ProjectName" MouseDoubleClick="lsbOutputDisplay_MouseDoubleClick"/>
         </StackPanel>
-
+        
     </Grid>
 </Window>

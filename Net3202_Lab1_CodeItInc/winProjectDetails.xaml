@@ -23,23 +23,23 @@
             <!-- label: "Project Name" -->
             <Label x:Name="lblProjectNameOut" Content="Project Name:" Target="{Binding ElementName=txtProjectNameOut}"/>
             <!--textbox displaying the current project name -->
-            <TextBox x:Name="txtProjectNameOut" IsEnabled="False"/>
+            <TextBox x:Name="txtProjectNameOut"/>
             <!--label: "Budget" -->
             <Label x:Name="lblBudgetOut" Content="Budget:" Target="{Binding ElementName=txtBudgetOut}"/>
             <!--textbox displaying the current budget -->
-            <TextBox x:Name="txtBudgetOut" IsEnabled="False"/>
+            <TextBox x:Name="txtBudgetOut"/>
             <!--label "spent" -->
             <Label x:Name="lblSpentOut" Content="Spent:" Target="{Binding ElementName=txtSpentOut}"/>
             <!--textbox displaying the current amount spent -->
-            <TextBox x:Name="txtSpentOut" IsEnabled="False"/>
+            <TextBox x:Name="txtSpentOut"/>
             <!--label: "Est hours remaining" -->
             <Label x:Name="lblEstHoursRemainingOut" Content="Est Hours Remaining:" Target="{Binding ElementName=txtEstHoursRemainingOut}"/>
             <!--textbox displaying the current estimated remaining time -->
-            <TextBox x:Name="txtEstHoursRemainingOut" IsEnabled="False"/>
+            <TextBox x:Name="txtEstHoursRemainingOut"/>
             <!--label: "Status" -->
             <Label x:Name="lblStatusOut" Content="Status:"/>
             <!--combobox with the currently select status displayed -->
-            <ComboBox x:Name="cmbStatusOut" IsEnabled="False">
+            <ComboBox x:Name="cmbStatusOut">
                 <!--Combobox items requirements, design, implementation,testing, deployment, completed" -->
                 <ComboBoxItem x:Name="cmbItemrequirementsOut" Content="Requirements" IsSelected="True"/>
                 <ComboBoxItem x:Name="cmbItemDesignOut" Content="Design"/>
@@ -51,7 +51,7 @@
             <!--generates a stackpanel for the buttons-->
             <StackPanel Margin="30">
                 <!-- generates a button "alter project"-->
-                <Button x:Name="btnAlterProject" Content="Alter Project" Margin="10" IsEnabled="False"/>
+                <Button x:Name="btnAlterProject" Content="Alter Project" Margin="10" Click="btnAlterProject_Click"/>
                 <!-- generates a button "close window-->
                 <Button x:Name="btnCloseWindow" Content="Close Window" Margin="10" Click="btnCloseWindow_Click"/>
             </StackPanel>

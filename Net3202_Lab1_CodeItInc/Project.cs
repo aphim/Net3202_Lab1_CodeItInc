@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 
@@ -20,8 +21,8 @@ namespace Net3202_Lab1_CodeItInc
         private double hoursRemaining;
         private int projectStatus;
 
-     //public constructor for creating a project class object
-    public Project(string projectName, double budget, double amountSpent, double hoursRemaining, int projectStatus)
+        //public constructor for creating a project class object
+        public Project(string projectName, double budget, double amountSpent, double hoursRemaining, int projectStatus)
         {
             this.projectName = projectName;
             this.budget = budget;
@@ -29,47 +30,49 @@ namespace Net3202_Lab1_CodeItInc
             this.hoursRemaining = hoursRemaining;
             this.projectStatus = projectStatus;
         }
-    /// <summary>
-    /// Getter and Setter for Project Name
-    /// </summary>
-    public string ProjectName
+        /// <summary>
+        /// Getter and Setter for Project Name
+        /// </summary>
+        public string ProjectName
         {
             get { return this.projectName; }
-            set { this.projectName = value; }
+            set
+            {
+                this.projectName = value;
+            }
         }
-    /// <summary>
-    /// Getter and setter for Project budget
-    /// </summary>
-    public double ProjectBudget
-        { 
+        /// <summary>
+        /// Getter and setter for Project budget
+        /// </summary>
+        public double ProjectBudget
+        {
             get { return this.budget; }
             set { this.budget = value; }
         }
-    /// <summary>
-    /// Getter and setter for project spent
-    /// </summary>
-    public double ProjectSpent
+        /// <summary>
+        /// Getter and setter for project spent
+        /// </summary>
+        public double ProjectSpent
         {
             get { return this.amountSpent; }
             set { this.amountSpent = value; }
         }
-    /// <summary>
-    /// Getter and setter for hours remaining
-    /// </summary>
-    public double HoursRemaining
+        /// <summary>
+        /// Getter and setter for hours remaining
+        /// </summary>
+        public double HoursRemaining
         {
             get { return this.hoursRemaining; }
             set { this.hoursRemaining = value; }
         }
-    /// <summary>
-    /// getter and setter for project status
-    /// </summary>
-    public int ProjectStatus
+        /// <summary>
+        /// getter and setter for project status
+        /// </summary>
+        public int ProjectStatus
         {
             get { return this.projectStatus; }
             set { this.projectStatus = value; }
         }
 
     }
-   
 }
